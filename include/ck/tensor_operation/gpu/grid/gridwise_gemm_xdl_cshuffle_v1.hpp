@@ -491,7 +491,7 @@ struct GridwiseGemm_k0mk1_k0nk1_mn_xdl_cshuffle_v1
         FloatC* p_c_grid;
     };
 
-    // FIXME: pass GridwiseGemmPipe as a template arguement into GridwiseGemm
+    // FIXME: pass GridwiseGemmPipe as a template argument into GridwiseGemm
     using GridwiseGemmPipe = remove_cvref_t<
         decltype(GridwiseGemmPipeline_Selector<PipelineVer, NumGemmKPrefetchStage, LoopSched>())>;
 
