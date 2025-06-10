@@ -251,7 +251,7 @@ struct BlockFmhaFwdSplitKVPipelineQRKSVS
                                tile_elementwise_in(lse_acc_element_func, lse_acc));
                 }
 
-                // Note: here occ are all cleard, return it
+                // Note: here occ are all cleared, return it
                 // Note: q loaded but no fence, ignore it.
                 return o_acc;
             }

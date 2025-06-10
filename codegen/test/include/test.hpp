@@ -412,12 +412,12 @@ auto within_abs(T px, U py, double ptol = 1e-6f)
 // `glob_match` function is called recursively to compare the rest of the
 // pattern to the rest of the string. If the recursive call returns true,
 // then we have a match. However, if it returns false, then we advance one
-// character and call the recusrsive call again. This is referred to as a
+// character and call the recursive call again. This is referred to as a
 // star-loop, which will consume zero or more characters.
 //
 // This simple recursive implementation works well for short string and
 // patterns with few stars. First, it is unlikely to use many stars to glob
-// test names. Secondly, using many stars is still signficantly faster than
+// test names. Secondly, using many stars is still significantly faster than
 // using the equivalent std::regex, which has a much slower time complexity.
 template <class Iterator1, class Iterator2>
 bool glob_match(Iterator1 start, Iterator1 last, Iterator2 pattern_start, Iterator2 pattern_last)

@@ -256,7 +256,7 @@ struct naive_attention_fwd_kernel
 
     __device__ __host__ static constexpr int get_block_size() { return 256; }
 
-    // for simpliciy, 1 WG always compute 1 token along q, compute all token along kv
+    // for simplicity, 1 WG always compute 1 token along q, compute all token along kv
     // compute all hdim from q, compute WG_SIZE hdim from v
     // 1) in prefill case, seqlen_q >= 1, seqlen_kv >= 1, batch_q=batch_kv
     // 2) in decode case, seqlen_q = 1, batch_q is input num-tokens, batch_kv is 1
@@ -447,7 +447,7 @@ struct naive_attention_fwd_kernel
             // per-token scale
             q_dequant_scale = type_convert<QuantComputeType>(qf_max) / scale_max<QCompute>::value;
 
-            // devide by scale
+            // divide by scale
             q = q / q_dequant_scale;
 
             // fp32->i8
@@ -464,7 +464,7 @@ struct naive_attention_fwd_kernel
         {
             if(std::is_same_v<QType, fp16_t> || std::is_same_v<QType, bf16_t>)
             {
-                // dyanmic quant q here
+                // dynamic quant q here
                 float q = 0;
                 if(static_cast<int>(threadIdx.x) < args.hdim)
                 {
@@ -480,7 +480,7 @@ struct naive_attention_fwd_kernel
                 q_dequant_scale =
                     type_convert<QuantComputeType>(q_max) / scale_max<QCompute>::value;
 
-                // devide by scale
+                // divide by scale
                 q = q / q_dequant_scale;
 
                 QCompute quantized_q = type_convert<QCompute>(q);
@@ -581,7 +581,7 @@ struct naive_attention_fwd_kernel
                     // per-token scale
                     p_dequant_scale = pf_max / scale_max<PType>::value; // 127.0;
 
-                    // devide by scale
+                    // divide by scale
                     p_compute = p_compute / p_dequant_scale;
 
                     // fp32->i8
@@ -608,7 +608,7 @@ struct naive_attention_fwd_kernel
                     // per-token scale
                     p_dequant_scale = p_max / scale_max<PType>::value; // 240.0;
 
-                    // devide by scale
+                    // divide by scale
                     p_compute = p_compute / p_dequant_scale;
 
                     // fp32->i8

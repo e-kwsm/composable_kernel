@@ -110,7 +110,7 @@ class BatchNormFwdArg
         };
 
         if(optind + 6 > argc)
-            throw std::runtime_error("Invalid cmd-line arguments, more argumetns are needed!");
+            throw std::runtime_error("Invalid cmd-line arguments, more arguments are needed!");
 
         data_type              = std::atoi(argv[optind++]);
         updateMovingAverage    = std::atoi(argv[optind++]);

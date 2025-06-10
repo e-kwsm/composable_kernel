@@ -230,7 +230,7 @@ class ReduceProfilerArgs
         };
 
         if(optind + 2 > argc)
-            throw std::runtime_error("Invalid cmd-line arguments, more argumetns are needed!");
+            throw std::runtime_error("Invalid cmd-line arguments, more arguments are needed!");
 
         init_method = std::atoi(argv[optind++]);
         time_kernel = static_cast<bool>(std::atoi(argv[optind]));

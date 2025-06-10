@@ -75,7 +75,7 @@ enum struct WmmaInstr
         |   | | | | | | | | | | | | | | | |
         -----------------------------------
 
-*   RC = Register for storing accumalted result
+*   RC = Register for storing accumulated result
 *	T  = Thread ID
 */
 
@@ -102,7 +102,7 @@ struct wmma_type<WmmaInstr::wmma_f32_16x16x16_f16,
     // * Thread mapping inside wave, num_thread_per_subgroups always alone N direction
     static constexpr index_t num_thread_per_subgroups = n_per_wmma;
 
-    // Wave mode dependent propety
+    // Wave mode dependent property
     static constexpr index_t wave_size = Number<WaveSize>{};
     // * Fixed on gfx11, Will be wave mode dependent for future architectures
     static constexpr index_t num_src_a_vgprs_per_wave = m_per_wmma * src_a_data_size / 4;
@@ -142,7 +142,7 @@ struct wmma_type<WmmaInstr::wmma_f32_16x16x16_bf16,
     static constexpr index_t acc_pack_number          = 1;
     static constexpr index_t num_thread_per_subgroups = n_per_wmma;
 
-    // Wave mode dependent propety
+    // Wave mode dependent property
     static constexpr index_t wave_size                = Number<WaveSize>{};
     static constexpr index_t num_src_a_vgprs_per_wave = m_per_wmma * src_a_data_size / 4;
     static constexpr index_t num_src_b_vgprs_per_wave = n_per_wmma * src_b_data_size / 4;
@@ -179,7 +179,7 @@ struct wmma_type<WmmaInstr::wmma_f16_16x16x16_f16,
     static constexpr index_t acc_pack_number          = 2;
     static constexpr index_t num_thread_per_subgroups = n_per_wmma;
 
-    // Wave mode dependent propety
+    // Wave mode dependent property
     static constexpr index_t wave_size                = Number<WaveSize>{};
     static constexpr index_t num_src_a_vgprs_per_wave = m_per_wmma * src_a_data_size / 4;
     static constexpr index_t num_src_b_vgprs_per_wave = n_per_wmma * src_b_data_size / 4;
@@ -215,7 +215,7 @@ struct wmma_type<WmmaInstr::wmma_bf16_16x16x16_bf16,
     static constexpr index_t acc_pack_number          = 2;
     static constexpr index_t num_thread_per_subgroups = n_per_wmma;
 
-    // Wave mode dependent propety
+    // Wave mode dependent property
     static constexpr index_t wave_size                = Number<WaveSize>{};
     static constexpr index_t num_src_a_vgprs_per_wave = m_per_wmma * src_a_data_size / 4;
     static constexpr index_t num_src_b_vgprs_per_wave = n_per_wmma * src_b_data_size / 4;
@@ -257,7 +257,7 @@ struct wmma_type<WmmaInstr::wmma_i32_16x16x16_iu8,
     static constexpr index_t acc_pack_number          = 1;
     static constexpr index_t num_thread_per_subgroups = n_per_wmma;
 
-    // Wave mode dependent propety
+    // Wave mode dependent property
     static constexpr index_t wave_size                = Number<WaveSize>{};
     static constexpr index_t num_src_a_vgprs_per_wave = m_per_wmma * src_a_data_size / 4;
     static constexpr index_t num_src_b_vgprs_per_wave = n_per_wmma * src_b_data_size / 4;
@@ -309,7 +309,7 @@ struct wmma_type<WmmaInstr::wmma_f32_16x16x16_f16_gfx12,
     static constexpr index_t acc_pack_number          = 1;
     static constexpr index_t num_thread_per_subgroups = n_per_wmma;
 
-    // Wave mode dependent propety
+    // Wave mode dependent property
     static constexpr index_t wave_size = Number<WaveSize>{};
     // * Fixed for gfx11, Will be wave mode dependent on gfx12
     // static constexpr index_t num_src_a_vgprs_per_wave = k_per_wmma / 2 * src_a_data_size / 4;
@@ -345,7 +345,7 @@ struct wmma_type<WmmaInstr::wmma_f32_16x16x16_bf16_gfx12,
     static constexpr index_t acc_pack_number          = 1;
     static constexpr index_t num_thread_per_subgroups = n_per_wmma;
 
-    // Wave mode dependent propety
+    // Wave mode dependent property
     static constexpr index_t wave_size = Number<WaveSize>{};
     // static constexpr index_t num_src_a_vgprs_per_wave = m_per_wmma * src_a_data_size / 4;
     // static constexpr index_t num_src_b_vgprs_per_wave = n_per_wmma * src_b_data_size / 4;
@@ -378,7 +378,7 @@ struct wmma_type<WmmaInstr::wmma_i32_16x16x16_iu8_gfx12,
     static constexpr index_t acc_pack_number          = 1;
     static constexpr index_t num_thread_per_subgroups = n_per_wmma;
 
-    // Wave mode dependent propety
+    // Wave mode dependent property
     static constexpr index_t wave_size = Number<WaveSize>{};
     // static constexpr index_t num_src_a_vgprs_per_wave = m_per_wmma * src_a_data_size / 4;
     // static constexpr index_t num_src_b_vgprs_per_wave = n_per_wmma * src_b_data_size / 4;
@@ -417,7 +417,7 @@ struct wmma_type<WmmaInstr::wmma_f32_16x16x16_f8f8_gfx12,
     static constexpr index_t acc_pack_number          = 1;
     static constexpr index_t num_thread_per_subgroups = n_per_wmma;
 
-    // Wave mode dependent propety
+    // Wave mode dependent property
     static constexpr index_t wave_size              = Number<WaveSize>{};
     static constexpr index_t num_acc_vgprs_per_wave = m_per_wmma * n_per_wmma / wave_size;
     static constexpr index_t num_subgroups          = wave_size / num_thread_per_subgroups;
@@ -452,7 +452,7 @@ struct wmma_type<WmmaInstr::wmma_f32_16x16x16_f8bf8_gfx12,
     static constexpr index_t acc_pack_number          = 1;
     static constexpr index_t num_thread_per_subgroups = n_per_wmma;
 
-    // Wave mode dependent propety
+    // Wave mode dependent property
     static constexpr index_t wave_size              = Number<WaveSize>{};
     static constexpr index_t num_acc_vgprs_per_wave = m_per_wmma * n_per_wmma / wave_size;
     static constexpr index_t num_subgroups          = wave_size / num_thread_per_subgroups;
@@ -487,7 +487,7 @@ struct wmma_type<WmmaInstr::wmma_f32_16x16x16_bf8f8_gfx12,
     static constexpr index_t acc_pack_number          = 1;
     static constexpr index_t num_thread_per_subgroups = n_per_wmma;
 
-    // Wave mode dependent propety
+    // Wave mode dependent property
     static constexpr index_t wave_size              = Number<WaveSize>{};
     static constexpr index_t num_acc_vgprs_per_wave = m_per_wmma * n_per_wmma / wave_size;
     static constexpr index_t num_subgroups          = wave_size / num_thread_per_subgroups;
@@ -522,7 +522,7 @@ struct wmma_type<WmmaInstr::wmma_f32_16x16x16_bf8bf8_gfx12,
     static constexpr index_t acc_pack_number          = 1;
     static constexpr index_t num_thread_per_subgroups = n_per_wmma;
 
-    // Wave mode dependent propety
+    // Wave mode dependent property
     static constexpr index_t wave_size              = Number<WaveSize>{};
     static constexpr index_t num_acc_vgprs_per_wave = m_per_wmma * n_per_wmma / wave_size;
     static constexpr index_t num_subgroups          = wave_size / num_thread_per_subgroups;

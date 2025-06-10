@@ -44,7 +44,7 @@ int profile_gemm_universal_reduce(int argc, char* argv[])
         printf("arg6: print tensor value (0: no; 1: yes)\n");
         printf("arg7: time kernel (0=no, 1=yes)\n");
         printf("arg8 to 13: M, N, K, StrideA, StrideB, StrideC\n");
-        printf("arg14: split k into  mulitiple batch\n");
+        printf("arg14: split k into  multiple batch\n");
         printf("optional:\n");
         printf("arg15: number of warm-up cycles (default 1)\n");
         printf("arg16: number of iterations (default 10)\n");

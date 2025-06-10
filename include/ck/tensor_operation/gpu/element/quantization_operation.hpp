@@ -46,7 +46,7 @@ struct Activation_Mul_Clamp
 
     __device__ constexpr void operator()(int32_t& y, const int32_t& x) const
     {
-        // CAUSION - We might type_convert to int8 in threadwise copy
+        // CAUTION - We might type_convert to int8 in threadwise copy
         // eg. GridwiseGemmDlMultipleD_km_kn_mn
         float y_fp32 = ck::type_convert<float>(x);
         activationOp_(y_fp32, y_fp32);
@@ -56,7 +56,7 @@ struct Activation_Mul_Clamp
 
     __host__ constexpr void operator()(float& y, const float& x) const
     {
-        // CAUSION - We might float in & float out in reference code
+        // CAUTION - We might float in & float out in reference code
         activationOp_(y, x);
         y = math::clamp(requantScale_ * y, -128.f, 127.f);
     }
@@ -115,7 +115,7 @@ struct Activation_Mul2_Clamp
     __device__ constexpr void
     operator()(int32_t& y, const int32_t& x, const float& requantScale) const
     {
-        // CAUSION - We might type_convert to int8 in threadwise copy
+        // CAUTION - We might type_convert to int8 in threadwise copy
         // eg. GridwiseGemmDlMultipleD_km_kn_mn
         float y_fp32 = ck::type_convert<float>(x);
         activationOp_(y_fp32, y_fp32);
@@ -158,7 +158,7 @@ struct Add_Activation_Mul_Clamp
     __host__ __device__ constexpr void
     operator()(int32_t& y, const int32_t& x, const int32_t& bias) const
     {
-        // CAUSION - We might type_convert to int8 in threadwise copy
+        // CAUTION - We might type_convert to int8 in threadwise copy
         // eg. GridwiseGemmDlMultipleD_km_kn_mn
         float y_fp32 = ck::type_convert<float>(x + bias);
         activationOp_(y_fp32, y_fp32);
@@ -189,7 +189,7 @@ struct Add_Activation_Mul2_Clamp
     __host__ __device__ constexpr void
     operator()(int32_t& y, const int32_t& x, const int32_t& bias, const float& requantScale) const
     {
-        // CAUSION - We might type_convert to int8 in threadwise copy
+        // CAUTION - We might type_convert to int8 in threadwise copy
         // eg. GridwiseGemmDlMultipleD_km_kn_mn
         float y_fp32 = ck::type_convert<float>(x + bias);
         activationOp_(y_fp32, y_fp32);
@@ -229,7 +229,7 @@ struct Add_Mul_Activation_Mul_Clamp
     __host__ __device__ constexpr void
     operator()(int32_t& y, const int32_t& x, const int32_t& bias) const
     {
-        // CAUSION - We might type_convert to int8 in threadwise copy
+        // CAUTION - We might type_convert to int8 in threadwise copy
         // eg. GridwiseGemmDlMultipleD_km_kn_mn
         float y_fp32 = ck::type_convert<float>(x + bias);
         y_fp32       = scaleAcc_ * y_fp32;
@@ -268,7 +268,7 @@ struct Add_Mul2_Activation_Mul_Clamp
     __host__ __device__ constexpr void
     operator()(int32_t& y, const int32_t& x, const int32_t& bias, const float& scaleAcc) const
     {
-        // CAUSION - We might type_convert to int8 in threadwise copy
+        // CAUTION - We might type_convert to int8 in threadwise copy
         // eg. GridwiseGemmDlMultipleD_km_kn_mn
         float y_fp32 = ck::type_convert<float>(x + bias);
         y_fp32       = scaleAcc * y_fp32;

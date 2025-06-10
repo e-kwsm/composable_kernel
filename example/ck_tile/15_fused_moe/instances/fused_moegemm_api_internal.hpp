@@ -10,7 +10,7 @@
 template <ck_tile::index_t... Is>
 using S = ck_tile::sequence<Is...>;
 
-// do not the define of this tepmlate function inside the _api.cpp, otherwise will block make -j
+// do not the define of this template function inside the _api.cpp, otherwise will block make -j
 template <typename Ts_>
 float fused_moegemm_(const ck_tile::stream_config& s, fused_moegemm_args a)
 {

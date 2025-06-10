@@ -28,7 +28,7 @@ __global__ void
 #if(!defined(__HIP_DEVICE_COMPILE__) || defined(__gfx908__) || defined(__gfx90a__) || \
     defined(__gfx94__))
     // Pass two lds pointer is the key to tell compiler that ds_read/write
-    // operate on different lds chunk at same time without order dependecy
+    // operate on different lds chunk at same time without order dependency
     __shared__ char p_shared_0[GridwiseGemm::GetSharedMemoryNumberOfByte()];
     __shared__ char p_shared_1[GridwiseGemm::GetSharedMemoryNumberOfByte()];
 

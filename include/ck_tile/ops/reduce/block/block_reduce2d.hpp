@@ -229,7 +229,7 @@ struct BlockReduce2dCrossWarpSync
         constexpr index_t num_warps     = BlockShape::BlockSize / warpSize;
         const index_t smem_offset       = warp_id;
 
-        // skip if nonthing to do
+        // skip if nothing to do
         if constexpr(num_reduce_warps == 1)
             return;
 

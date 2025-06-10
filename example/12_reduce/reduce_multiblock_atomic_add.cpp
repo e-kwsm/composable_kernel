@@ -95,7 +95,7 @@ class SimpleAppArgs
 
         if(optind + 3 > argc)
         {
-            throw std::runtime_error("Invalid cmd-line arguments, more argumetns are needed!");
+            throw std::runtime_error("Invalid cmd-line arguments, more arguments are needed!");
         };
 
         data_type   = std::atoi(argv[optind++]);

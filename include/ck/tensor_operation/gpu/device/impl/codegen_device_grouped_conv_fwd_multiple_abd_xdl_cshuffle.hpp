@@ -900,7 +900,7 @@ struct CodegenDeviceGroupedConvFwdMultipleABD_Xdl_CShuffle
         // check Gridwise GEMM
         if constexpr(isMultiA || isMultiB)
         {
-            // Genarate tuples with the same descriptors
+            // Generate tuples with the same descriptors
             const auto as_grid_desc_ak0_m_ak1 =
                 generate_tuple([&](auto) { return arg.a_grid_desc_m_k_; }, Number<NumATensor>{});
             const auto bs_grid_desc_bk0_n_bk1 =

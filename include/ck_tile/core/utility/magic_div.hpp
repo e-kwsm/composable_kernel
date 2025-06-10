@@ -21,8 +21,8 @@ namespace ck_tile {
 //   division implementation for uint32_t is then used. Therefore, dividend value need to be
 //   non-negative.
 // TODO:
-//   1. Implement magic number divison for int32_t
-//   2. Implement magic number divison for unit32_t with 32-bit value range
+//   1. Implement magic number division for int32_t
+//   2. Implement magic number division for unit32_t with 32-bit value range
 struct magic_division32_bit_range
 {
     // uint32_t
@@ -81,7 +81,7 @@ struct magic_division32_bit_range
     // magic division for int32_t
     // HACK: use dividend_i32 as if it's uint32_t, dividend_i32 need to be
     // non-negative for result to be correct
-    // TODO: figure out how to do magic number divison for int32_t as dividended
+    // TODO: figure out how to do magic number division for int32_t as dividended
     CK_TILE_DEVICE static constexpr int32_t
     do_magic_division(int32_t dividend_i32, uint32_t multiplier, uint32_t shift)
     {
@@ -161,7 +161,7 @@ struct magic_division16_bit_range
     // magic division for int32_t
     // HACK: use dividend_i32 as if it's uint32_t, dividend_i32 need to be
     // non-negative for result to be correct
-    // TODO: figure out how to do magic number divison for int32_t as dividended
+    // TODO: figure out how to do magic number division for int32_t as dividended
     CK_TILE_DEVICE static constexpr int32_t
     do_magic_division(int32_t dividend_i32, uint32_t multiplier, uint32_t shift)
     {

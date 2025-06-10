@@ -203,7 +203,7 @@ struct [[deprecated]] BlockFmhaPipelineQRKSVSFp8
         {
             if(num_total_loop <= 0)
             {
-                // Note: here occ are all cleard, return it
+                // Note: here occ are all cleared, return it
                 // Note: q loaded but no fence, ignore it.
                 return o_acc;
             }

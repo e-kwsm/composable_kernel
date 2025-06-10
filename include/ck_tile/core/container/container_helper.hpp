@@ -441,7 +441,7 @@ CK_TILE_HOST_DEVICE constexpr void set_container_subset(Y& y, sequence<Is...> pi
     }
 }
 
-// return the index of first occurance in the sequence.
+// return the index of first occurrence in the sequence.
 // return seq.size(), if not found
 template <index_t... Is>
 constexpr index_t container_find(sequence<Is...> seq, index_t value)

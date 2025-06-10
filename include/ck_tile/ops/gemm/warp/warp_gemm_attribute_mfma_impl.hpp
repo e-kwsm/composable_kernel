@@ -8,7 +8,7 @@
 namespace ck_tile {
 
 // TODO: refactor warp-gemm
-// currently there is a discrepency for vav/vva if we need transpose C/D
+// currently there is a discrepancy for vav/vva if we need transpose C/D
 // e.g. if we want A:agpr, B:vgpr, we have to use vva in WGAttrEnum
 // because we swap the A/B pointer in _impl code (but not known this info here)
 enum class WGAttrCtlEnum

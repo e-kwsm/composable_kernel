@@ -72,7 +72,7 @@ __host__ __device__ Y run_cast_to_f8(X x, uint32_t rng)
     if(x_bitwise == 0)
         return 0;
 
-    // First need to check if it is normal or denorm as there is a difference of implict 1
+    // First need to check if it is normal or denorm as there is a difference of implicit 1
     // Then need to adjust the exponent to align with the F8 exponent, in the meanwhile, shift
     // The mantissa. Then for stochastic rounding, add rng to mantissa and truncate. And for
     // RNE, no need to add rng. Then probably need to check whether there is carry and adjust
@@ -106,7 +106,7 @@ In this case, the fp16 mantissa should be shift left by 1 */
         {
             /* This is the case where fp32/fp16 is normal but it is in f8 denormal range.
    For example fp8 nanoo mode, denormal exponent is -7, but if the fp32/fp16
-   actual exponent is -7, it is actually larger due to the implict 1,
+   actual exponent is -7, it is actually larger due to the implicit 1,
    Therefore it needs to be adjust to -6 and mantissa shift right by 1.
    So for fp32/fp16, exponent -8 is the cut point to convert to fp8 nanoo */
             exponent_diff = out_denormal_act_exponent - act_exponent;
@@ -132,7 +132,7 @@ In this case, the fp16 mantissa should be shift left by 1 */
     else if(exponent_diff == -1)
         mantissa <<= -exponent_diff;
     bool implicit_one = mantissa & (1 << in_mant);
-    // if there is no implict 1, it  means the f8 is denormal and need to adjust to denorm exponent
+    // if there is no implicit 1, it  means the f8 is denormal and need to adjust to denorm exponent
     out_exponent =
         (act_exponent + exponent_diff) /*actual f8 exponent*/ + out_bias - (implicit_one ? 0 : 1);
 

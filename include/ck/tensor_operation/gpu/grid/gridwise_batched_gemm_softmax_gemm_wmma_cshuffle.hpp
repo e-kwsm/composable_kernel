@@ -751,7 +751,7 @@ struct GridwiseBatchedGemmSoftmaxGemm_Wmma
 /*******************************************************************************/
 
 /*******************************************************************************/
-// BlockLevel, A/B Matrix ThreadMapping in LDS, As Destinaion of BlockWise_Copy
+// BlockLevel, A/B Matrix ThreadMapping in LDS, As Destination of BlockWise_Copy
         constexpr auto a_block_desc  = MakeABlockDescriptor();
         constexpr auto b0_block_desc = MakeB0BlockDescriptor();
 

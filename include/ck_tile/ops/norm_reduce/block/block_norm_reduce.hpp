@@ -19,7 +19,7 @@ struct BlockNormReduce
 
     CK_TILE_DEVICE constexpr BlockNormReduce() {}
 
-    // [CAUSION] - max_count_ is to deal with the padding problem
+    // [CAUTION] - max_count_ is to deal with the padding problem
     // max_count_ is depend on caller, eg: naive and splitN norm_reduce will have different
     // calculation of max_count_
     // -> use block_welford_calculate_max_count to compute
@@ -279,7 +279,7 @@ struct BlockNormReduceCrossWarpSync
         constexpr index_t num_warps     = BlockShape::BlockSize / warpSize;
         const index_t smem_offset       = warp_id;
 
-        // skip if nonthing to do
+        // skip if nothing to do
         if constexpr(num_reduce_warps == 1)
             return;
 

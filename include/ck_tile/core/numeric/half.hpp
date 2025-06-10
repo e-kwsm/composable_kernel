@@ -26,7 +26,7 @@ CK_TILE_HOST_DEVICE
 constexpr fp16_hip_t double_to_fp16_hip(const double& x);
 
 #if CK_TILE_USE_CUSTOM_DATA_TYPE
-// HIP use fp16_hip_t as interchangable data type for float16
+// HIP use fp16_hip_t as interchangeable data type for float16
 struct alignas(2) half_t
 {
     using raw_type = fp16_raw_t;
@@ -165,7 +165,7 @@ struct numeric<half_t>
         return bit_cast<half_t>(static_cast<fp16_raw_t>(0x0400));
     }
 
-    // minumum finite value
+    // minimum finite value
     CK_TILE_HOST_DEVICE static constexpr half_t lowest()
     {
         return bit_cast<half_t>(static_cast<fp16_raw_t>(0xFBFF));

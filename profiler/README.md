@@ -13,7 +13,7 @@
 # arg6: print tensor value (0: no; 1: yes)
 # arg7: time kernel (0=no, 1=yes)
 # arg8 to 13: M, N, K, StrideA, StrideB, StrideC
-# arg14: split k into  mulitiple batch
+# arg14: split k into  multiple batch
 # optional:
 # arg15: number of warm-up cycles (default 1)
 # arg16: number of iterations (default 10)

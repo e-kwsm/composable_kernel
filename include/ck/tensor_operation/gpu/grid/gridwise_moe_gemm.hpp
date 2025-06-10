@@ -22,7 +22,7 @@ namespace ck {
 
 // Currently we do not have a elegant way to put single lds buffer & double lds buffer pipe in same
 // kernel function Blockers:
-// 1. Two separted declaration of __shared__ pointer is the key to make sure data access operate on
+// 1. Two separated declaration of __shared__ pointer is the key to make sure data access operate on
 // two lds chunks.
 // 2. Occupied __shared__ won't release until whole shader end, a.k.a AB and C may not use same lds
 // buffer when we declare __shared__ inside blkgemmpipe

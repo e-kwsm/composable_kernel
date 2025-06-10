@@ -127,8 +127,8 @@ struct Alibi
     }
 
     DataType slope;           // float?
-    index_t shift_left_up;    // always possitive
-    index_t shift_right_down; // always possitive
+    index_t shift_left_up;    // always positive
+    index_t shift_right_down; // always positive
     AlibiMode mode;
 };
 

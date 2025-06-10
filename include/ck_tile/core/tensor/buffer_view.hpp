@@ -260,7 +260,7 @@ struct buffer_view<address_space_enum::global,
     {
     }
 
-    // this is non constexpr intentially (will call some intrinsic internally)
+    // this is non constexpr intentionally (will call some intrinsic internally)
     // Must call for buffers that need *_raw load/store
     CK_TILE_HOST_DEVICE void init_raw()
     {

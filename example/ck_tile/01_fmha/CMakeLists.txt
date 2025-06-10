@@ -25,7 +25,7 @@ execute_process(
   RESULT_VARIABLE ret
 )
 if(ret AND NOT ret EQUAL 0)
-  message(FATAL_ERROR "CK Tile FMHA FAILED to genrate a list of FWD kernels via Python.")
+  message(FATAL_ERROR "CK Tile FMHA FAILED to generate a list of FWD kernels via Python.")
 endif()
 
 execute_process(
@@ -34,7 +34,7 @@ execute_process(
   RESULT_VARIABLE ret
 )
 if(ret AND NOT ret EQUAL 0)
-  message(FATAL_ERROR "CK Tile FMHA FAILED to genrate a list of BWD kernels via Python.")
+  message(FATAL_ERROR "CK Tile FMHA FAILED to generate a list of BWD kernels via Python.")
 endif()
 
 # NOTE: for cmake, the FMHA_FWD_GEN_BLOBS/FMHA_BWD_GEN_BLOBS files must be in the same directory

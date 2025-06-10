@@ -774,7 +774,7 @@ struct FastGeluAsm
         y.y              = x.y / (1.f + emu1);
     }
 
-    // this is packed verion to remove data hazard for trans
+    // this is packed version to remove data hazard for trans
     template <>
     CK_TILE_DEVICE void operator()<fp32x2_t, fp32x2_t>(fp32x2_t& y, const fp32x2_t& x) const
     {
@@ -805,7 +805,7 @@ struct FastGeluAsm
               [v_y1] "+v"(y1),
               [v_c2] "+v"(c2),
               // NOTE! it is totally possible that c2/y0/y1 share same register, they are all local
-              // tmp variables we need to expicitly hint compiler they may read+write, to allow
+              // tmp variables we need to explicitly hint compiler they may read+write, to allow
               // allocate different register , the side effect is c2=** may issue for every such
               // inline asm block
               [v_tmp0] "+v"(tmp0),
@@ -896,7 +896,7 @@ struct SiluAsm
         const uint32_t log2e_neg_ = 0x3fb8aa3b | 0x80000000; // log2e_v<float> * -1;
 
         // NOTE: x/y can't be same register before inline asm
-        // "+v" as y, "v" as x is not enought, x/y stil maybe put to same register
+        // "+v" as y, "v" as x is not enough, x/y still maybe put to same register
         T tmp = x;
         asm volatile("v_mul_f32 %[v_y], %[s_log2e], %[v_x]\n"
                      "v_exp_f32 %[v_y], %[v_y]\n"

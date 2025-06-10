@@ -40,7 +40,7 @@ execute_process(
   RESULT_VARIABLE ret
 )
 if(ret AND NOT ret EQUAL 0)
-  message( FATAL_ERROR "CK Tile MHA FAILED to genrate a list of kernels via Python.")
+  message( FATAL_ERROR "CK Tile MHA FAILED to generate a list of kernels via Python.")
 else()
   file(STRINGS ${FMHA_CPP_FOLDER}/blob_list.txt FMHA_GEN_BLOBS)
 endif()

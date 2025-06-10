@@ -1471,7 +1471,7 @@ struct ThreadwiseTensorSliceTransfer_v4
                 // DstData)
                 vector_type_maker_t<DstData, SrcScalarPerVector / PackedSize> dst_tmp_vector;
 
-                // TODO: if SrcData and DstData are vetor type, then static_cast may not compile
+                // TODO: if SrcData and DstData are vector type, then static_cast may not compile
                 static_for<0, SrcScalarPerVector / PackedSize, 1>{}([&](auto i) {
                     dst_tmp_vector.template AsType<DstData>()(i) =
                         type_convert<DstData>(src_tmp_vector.template AsType<SrcData>()[i]);
@@ -1671,7 +1671,7 @@ struct ThreadwiseTensorSliceTransfer_v4
                 // DstData)
                 vector_type_maker_t<DstData, SrcScalarPerVector> dst_tmp_vector;
 
-                // TODO: if SrcData and DstData are vetor type, then static_cast may not compile
+                // TODO: if SrcData and DstData are vector type, then static_cast may not compile
                 static_for<0, SrcScalarPerVector, 1>{}([&](auto i) {
                     dst_tmp_vector.template AsType<DstData>()(i) =
                         type_convert<DstData>(src_tmp_vector.template AsType<SrcData>()[i]);

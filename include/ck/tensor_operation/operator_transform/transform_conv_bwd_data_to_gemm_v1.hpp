@@ -354,7 +354,7 @@ struct TransformConvBwdDataToGemm_v1
                 math::min(Di_ - (di_right_transformer_start_idx - InLeftPadD_),
                           (conv_to_gemm_transformer_right.Do_ - 1) * ConvStrideD_ + z_eff);
             ;
-            // Calcualte offsets
+            // Calculate offsets
             a_right_offset = (Do_ / 2) * DoStride_;
             c_right_offset = ((Do_ / 2) * ConvStrideD_ - InLeftPadD_) * DiStride_;
         }
@@ -438,7 +438,7 @@ struct TransformConvBwdDataToGemm_v1
             conv_to_gemm_transformer_left.Do_ = do_left_transformer_end_idx;
             conv_to_gemm_transformer_right.Do_ = Do_ - do_right_transformer_start_idx;
             ;
-            // Calcualte offsets
+            // Calculate offsets
             a_right_offset = do_right_transformer_start_idx * DoStride_;
             c_right_offset = (Di_ / 2) * DiStride_;
         }
@@ -458,7 +458,7 @@ struct TransformConvBwdDataToGemm_v1
             conv_to_gemm_transformer_left.Ho_ = ho_left_transformer_end_idx ;
             conv_to_gemm_transformer_right.Ho_ = Ho_ - ho_right_transformer_start_idx ;
             ;
-            // Calcualte offsets
+            // Calculate offsets
             a_right_offset = ho_right_transformer_start_idx * HoStride_;
             c_right_offset = (Hi_ / 2) * HiStride_;
         }
@@ -478,7 +478,7 @@ struct TransformConvBwdDataToGemm_v1
             conv_to_gemm_transformer_left.Wo_ = wo_left_transformer_end_idx;
             conv_to_gemm_transformer_right.Wo_ = Wo_ - wo_right_transformer_start_idx;
             ;
-            // Calcualte offsets
+            // Calculate offsets
             a_right_offset = wo_right_transformer_start_idx * WoStride_;
             c_right_offset = (Wi_ / 2) * WiStride_;
         }

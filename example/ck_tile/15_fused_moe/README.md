@@ -2,7 +2,7 @@
 Implementing the fused-moe block operator using ck-tile. This is a scatter/gather-group-gemm based solution, similiar to that of [vllm moe](https://github.com/vllm-project/vllm/blob/main/benchmarks/kernels/benchmark_moe.py), but we introduce more kernel fusion to boost performance
 ![](misc/moe-0.png)
 
-The benifit of this fused-moe:
+The benefit of this fused-moe:
 * 1.5~2x perf boost compared with current vllm solution
 * zero workspace to reduce memory footprint
 * much less kernel instance, easy to maintain
@@ -22,7 +22,7 @@ After `moe-sorting`, we can view this algorithm as expert-by-expert, as below:
 
 ## optimization
 summary of the key design of this fused-moe operator:
-* fuse 2 group-gemm + activation + `topk-weight` multiply into single kernel, using atomic for 2nd gemm accumualation
+* fuse 2 group-gemm + activation + `topk-weight` multiply into single kernel, using atomic for 2nd gemm accumulation
 * fuse buffer-zeroing in `moe-sorgin`, user no longer need call extra torch.zero() for the out buffer
 * fused scatter-gather for row index(same as vllm)
 * pre-shuffle B matric(weight) to maximize memory throughput. input(activation) keep original layout `[batch, hidden]`.

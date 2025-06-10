@@ -39,7 +39,7 @@ namespace ck_tile {
 // num_tokens_post_padded_ptr : [28]
 // num_sorted_tiles_ptr : [7]
 
-template <typename AccDataType, // you only need to explcitly set this one
+template <typename AccDataType, // you only need to explicitly set this one
           typename Activation,  // ck_tile::element_wise::Gelu
           typename ADataType,
           typename GDataType,

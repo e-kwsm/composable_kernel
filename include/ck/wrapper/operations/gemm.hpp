@@ -372,7 +372,7 @@ __host__ __device__ constexpr auto make_blockwise_gemm_xdl_c_vgpr()
                                                             GemmTraits::MXdlPerWave,
                                                             GemmTraits::NXdlPerWave,
                                                             GemmTraits::K1>;
-    // Calcualte descriptor, shape and layout
+    // Calculate descriptor, shape and layout
     constexpr auto vgpr_desc = BlockwiseGemmXdlops::GetCThreadDescriptor_M0_N0_M1_N1_M2_M3_M4_N2();
     const auto vgpr_shape    = make_tuple(vgpr_desc.GetLengths()[I0],
                                        vgpr_desc.GetLengths()[I1],

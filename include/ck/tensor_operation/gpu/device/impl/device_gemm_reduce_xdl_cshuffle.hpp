@@ -20,7 +20,7 @@ namespace ck {
 namespace tensor_operation {
 namespace device {
 
-// Note: inter-wave loop scheduler is rolled out to c-shuffle version first. Becuase non c-shuffle
+// Note: inter-wave loop scheduler is rolled out to c-shuffle version first. Because non c-shuffle
 // version currently has compiler issues with register spill which further causes validation
 // failures.
 template <typename ALayout,

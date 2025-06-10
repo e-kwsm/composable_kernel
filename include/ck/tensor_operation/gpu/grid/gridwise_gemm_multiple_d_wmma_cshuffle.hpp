@@ -928,7 +928,7 @@ struct GridwiseGemmMultipleD_Wmma
         const index_t n_block_data_idx_on_grid = __builtin_amdgcn_readfirstlane(block_work_idx[I1] * NPerBlock);
 
 /*******************************************************************************/
-// BlockLevel, A/B Matrix ThreadMapping in LDS, As Destinaion of BlockWise_Copy
+// BlockLevel, A/B Matrix ThreadMapping in LDS, As Destination of BlockWise_Copy
         const auto K = [&](){
             if constexpr(AEnableLds){
                 return a_grid_desc.GetLength(I0) * a_grid_desc.GetLength(I2);

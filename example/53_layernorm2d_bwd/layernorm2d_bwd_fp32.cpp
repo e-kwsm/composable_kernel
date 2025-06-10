@@ -47,7 +47,7 @@ constexpr int NumReduceDim = 1;
 // dgamma = reduce_sum(dy * (x - mean) * inv_std, axis=0)
 // dbeta = reduce_sum(dy, axis=0)
 
-// [CAUSION]
+// [CAUTION]
 // In DeviceNormalizationBwdDataImpl & DeviceNormalizationBwdGammaBetaImpl, M is Invariant
 // dimension, K is reduced dimension Hence, M in this example and
 // DeviceNormalizationBwdGammaBetaImpl is different

@@ -11,8 +11,8 @@ namespace ck_tile {
 
 template <bool kPadSeqLenQ_ /* padding for seqlen_q */,
           bool kPadSeqLenK_ /* padding for seqlen_k */,
-          bool kPadHeadDimQ_ /* paddding for hdim_q */,
-          bool kPadHeadDimV_ /* paddding for hdim_v */,
+          bool kPadHeadDimQ_ /* padding for hdim_q */,
+          bool kPadHeadDimV_ /* padding for hdim_v */,
           bool kHasLogitsSoftCap_,
           BlockAttentionBiasEnum BiasEnum_,
           bool kHasBiasGrad_,
@@ -39,8 +39,8 @@ struct TileFmhaTraits
 
 template <bool kPadSeqLenQ_ /* padding for seqlen_q */,
           bool kPadSeqLenK_ /* padding for seqlen_k */,
-          bool kPadHeadDimQ_ /* paddding for hdim_q */,
-          bool kPadHeadDimV_ /* paddding for hdim_v */,
+          bool kPadHeadDimQ_ /* padding for hdim_q */,
+          bool kPadHeadDimV_ /* padding for hdim_v */,
           bool kHasLogitsSoftCap_,
           BlockAttentionBiasEnum BiasEnum_,
           bool kHasBiasGrad_,
@@ -69,7 +69,7 @@ struct TileFmhaFwdSplitKVTraits
 };
 
 template <bool kPadSeqLenQ_ /* padding for seqlen_q */,
-          bool kPadHeadDimV_ /* paddding for hdim_v */,
+          bool kPadHeadDimV_ /* padding for hdim_v */,
           bool kStoreLSE_,
           bool kDoFp8StaticQuant_,
           index_t kLogMaxSplits_,
@@ -88,8 +88,8 @@ struct TileFmhaFwdSplitKVCombineTraits
 
 template <bool kPadSeqLenQ_ /* padding for seqlen_q */,
           bool kPadSeqLenK_ /* padding for seqlen_k */,
-          bool kPadHeadDimQ_ /* paddding for hdim_q */,
-          bool kPadHeadDimV_ /* paddding for hdim_v */,
+          bool kPadHeadDimQ_ /* padding for hdim_q */,
+          bool kPadHeadDimV_ /* padding for hdim_v */,
           index_t kBlockPerCu_ = -1 /* overwrite occupancy if not -1 */>
 struct TileFmhaFwdAppendKVTraits
 {
@@ -101,7 +101,7 @@ struct TileFmhaFwdAppendKVTraits
 };
 
 template <bool kPadSeqLenQ_ /* padding for seqlen_q */,
-          bool kPadHeadDimV_ /* paddding for hdim_v */,
+          bool kPadHeadDimV_ /* padding for hdim_v */,
           index_t kBlockPerCu_ = 2 /* hint to occupancy */>
 struct TileFmhaBwdOGradDotOTraits
 {
@@ -111,7 +111,7 @@ struct TileFmhaBwdOGradDotOTraits
 };
 
 template <bool kPadSeqLenQ_ /* padding for seqlen_q */,
-          bool kPadHeadDimQ_ /* paddding for hdim_q */,
+          bool kPadHeadDimQ_ /* padding for hdim_q */,
           index_t kBlockPerCu_ = 2 /* hint to occupancy */>
 struct TileFmhaBwdConvertQGradTraits
 {

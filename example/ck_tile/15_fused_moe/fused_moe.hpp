@@ -19,7 +19,7 @@ struct fused_moe_args
     void* o_ptr;                       // [m, k], output token (no need to do zeroing)
     void* ws_ptr;                      // size is moe_sorting_get_workspace_size()
                                        // if return zero, then could be nullptr
-                                       // must be cleard before use
+                                       // must be cleared before use
 
     const void* topk_ids_ptr;    // [tokens, topk]
     const void* topk_weight_ptr; // [tokens, topk]
@@ -28,7 +28,7 @@ struct fused_moe_args
     void* sorted_expert_ids_ptr; // [(max_num_tokens_padded + block_size - 1) / block_size]
     void* num_sorted_tiles_ptr;  // [1]
 
-    ck_tile::index_t block_m;           // block_m, used to devide the input
+    ck_tile::index_t block_m;           // block_m, used to divide the input
     ck_tile::index_t hidden_size;       // k
     ck_tile::index_t intermediate_size; // n / TP, for Gate. and Up, Down is also this value
     ck_tile::index_t num_tokens;        // input number of tokens for current iteration

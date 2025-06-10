@@ -151,7 +151,7 @@ bool profile_batched_gemm_softmax_gemm_impl(bool do_verification,
     {
     case 0: break;
     case 1:
-        // Still unsure whether this kind of deterministic floating point accurary issue is expected
+        // Still unsure whether this kind of deterministic floating point accuracy issue is expected
         // or not. May want to try exact same approach as the GPU kernel in the host reference
         // GEMM+Softmax+GEMM function to see if the accuracy discrepancy goes away. Until then,
         // shrink the input value range as it is less likely to produce errors of around ~1e-3.

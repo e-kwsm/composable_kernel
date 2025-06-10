@@ -55,7 +55,7 @@ template <typename SaturateType>
 struct saturates
 {
     // NOTE: this function does not return SaturateType value
-    // it is user's responsiblity to do further cast or not
+    // it is user's responsibility to do further cast or not
     template <typename AccType>
     CK_TILE_HOST_DEVICE constexpr auto operator()(const AccType& a_) const
         -> std::enable_if_t<std::is_arithmetic_v<AccType>, AccType>

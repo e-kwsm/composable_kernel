@@ -22,7 +22,7 @@ namespace ck {
 #define KERNEL_GEMM_XDL_CSHUFFLE_V3_MX
 // Currently we do not have a elegant way to put single lds buffer & double lds buffer pipe in same
 // kernel function Blockers:
-// 1. Two separted declaration of __shared__ pointer is the key to make sure data access operate on
+// 1. Two separated declaration of __shared__ pointer is the key to make sure data access operate on
 // two lds chunks.
 // 2. Occupied __shared__ won't release until whole shader end, a.k.a AB and C may not use same lds
 // buffer when we declare __shared__ inside blkgemmpipe
@@ -73,7 +73,7 @@ __global__ enable_if_t<Use2LDS, void>
 {
 #if defined(__gfx950__) && __HIP_DEVICE_COMPILE__
     // Pass two lds pointer is the key to tell compiler that ds_read/write
-    // operate on different lds chunk at same time without order dependecy
+    // operate on different lds chunk at same time without order dependency
     __shared__ char p_shared_0[GridwiseGemm::GetSharedMemoryNumberOfByte()];
     __shared__ char p_shared_1[GridwiseGemm::GetSharedMemoryNumberOfByte()];
 

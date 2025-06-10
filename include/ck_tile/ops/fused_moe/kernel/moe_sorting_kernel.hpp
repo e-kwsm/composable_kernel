@@ -77,7 +77,7 @@ namespace ck_tile {
 // num_tokens_post_padded_ptr : [24]
 // 
 // * local_expert_mask : indicate local expert mask used on current GPU (used for EP case)
-//   and modify the output expert-ID, because we will only have enbaled expert on specific GPU.
+//   and modify the output expert-ID, because we will only have enabled expert on specific GPU.
 //   we call expert input to this kernel as "global expert id", output as "local expert id"
 //
 // * local_expert_mask : [1, 0, 1, 1, 0, 1] (mask out expert-id=1, 4)
@@ -191,7 +191,7 @@ struct MoeSortingHostArgs
     void* p_moe_buf;
     void* p_ws;             // size is moe_sorting_get_workspace_size()
                             // if return zero, then could be nullptr
-                            // must be cleard before use
+                            // must be cleared before use
     index_t tokens;
     index_t unit_size;      // this is the M_a of fused-moe kernel
     index_t num_experts;
@@ -1067,7 +1067,7 @@ CK_TILE_HOST_DEVICE index_t moe_sorting_mp_mesh_stride(index_t tokens)
     return (tokens + chunk - 1) / chunk * chunk;
 };
 
-// 4-i32 mesh, 2-i16 mseh, 1-i8 mesh
+// 4-i32 mesh, 2-i16 mesh, 1-i8 mesh
 CK_TILE_HOST index_t moe_sorting_mesh_byte_size(index_t tokens_,
                                                 index_t /*num_experts_*/,
                                                 index_t topk_)
@@ -2382,7 +2382,7 @@ struct MoeSortingMultiPhaseKernel_P23
 #if 0
                 if constexpr(index_pack != 1)
                 {
-                    // shuffle, we must have contiguout thread holds contiguout token
+                    // shuffle, we must have contiguous thread holds contiguous token
                     __syncthreads();
                     reinterpret_cast<r_t*>(s)[threadIdx.x] = x_v;
                     __syncthreads();

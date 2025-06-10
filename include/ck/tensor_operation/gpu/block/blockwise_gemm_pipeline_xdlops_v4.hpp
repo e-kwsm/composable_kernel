@@ -7,7 +7,7 @@
 
 namespace ck {
 
-// Compute optimimal pipeline with highest resource request
+// Compute optimal pipeline with highest resource request
 // GlobalPrefetchStages: 3
 // LocalPreFillStages: 2
 // LocalPreFetchStages: 1

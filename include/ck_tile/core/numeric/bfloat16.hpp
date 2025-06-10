@@ -210,7 +210,7 @@ uint16_t float_to_bf16_rta_asm(float f)
                  : [s_cnan] "+s"(check_nan), [v_x] "+v"(u.fp32)
                  : [v_blo] "v"(low_nan), [v_bhi] "v"(hi_nan));
 
-    // Note: in above code snipet, we use hi 16 bit
+    // Note: in above code snippet, we use hi 16 bit
     return u.hi;
 }
 
@@ -318,7 +318,7 @@ struct numeric<bfloat16_t>
         return bit_cast<bfloat16_t>(static_cast<bf16_raw_t>(0x0080));
     }
 
-    // minumum finite value
+    // minimum finite value
     CK_TILE_HOST_DEVICE static constexpr bfloat16_t lowest()
     {
         return bit_cast<bfloat16_t>(static_cast<bf16_raw_t>(0xff7f));

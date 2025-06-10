@@ -12,7 +12,7 @@
 namespace ck_tile {
 //  pre-defined indexing adaptor used for indexing(scatter/gather)
 
-// this version cache the index inside thread register(which is also prefered in real senario)
+// this version cache the index inside thread register(which is also preferred in real scenario)
 // however it's user's responsibility that each thread only provide one indexing, which means
 // move coordinate will not change on this dim
 template <typename IndexingType>
@@ -42,7 +42,7 @@ struct indexing_adaptor_onshot_cached
                                                 LowIdx& /*idx_low*/,
                                                 const UpIdx& /*idx_up*/) const
     {
-        // TODO: nonthing changed here
+        // TODO: nothing changed here
         static_assert(LowIdxDiff::size() == 1 && UpIdxDiff::size() == 1 && LowIdx::size() == 1 &&
                           UpIdx::size() == 1,
                       "wrong! inconsistent # of dimension");

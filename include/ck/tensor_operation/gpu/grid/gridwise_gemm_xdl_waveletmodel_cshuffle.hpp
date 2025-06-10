@@ -709,10 +709,10 @@ struct GridwiseGemm_k0mk1_k0nk1_mn_xdl_waveletmodel_cshuffle
                 // TODO
                 //      We do not need to do LDS swizzle to align global writes writing cache lines:
                 //         v_mfma  cmat, amat, bmat, cmat   - c-mat register layout   are 1xN
-                //                                            elments  (N is vertical or strided
+                //                                            elements  (N is vertical or strided
                 //                                            dimension)
                 //         v_mfma  cmat, bmat, amat, cmat   - c-mat register layout   are Mx1
-                //         elments  (M is coalescing
+                //                                            elements  (M is coalescing
                 //                                            dimension) by enumerating M index in
                 //                                            amat, bmat you can align cmat
                 //                                            register(s) to contiguous M elements

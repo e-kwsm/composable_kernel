@@ -438,7 +438,7 @@ struct TransformConvFwdToGemm
                 math::min(Di_ - (di_right_transformer_start_idx - InLeftPadD_),
                           (conv_to_gemm_transformer_right.Do_ - 1) * ConvStrideD_ + z_eff);
             ;
-            // Calcualte offsets
+            // Calculate offsets
             a_right_offset = ((Do_ / 2) * ConvStrideD_ - InLeftPadD_) * DiStride_;
             c_right_offset = (Do_ / 2) * DoStride_;
         }

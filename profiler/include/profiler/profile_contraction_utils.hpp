@@ -46,8 +46,8 @@ inline void collect_index_params(char* argv[],
         params.push_back(std::stoi(argv[p]));
 }
 
-// Defualt strides for row-major: {Dim1 * Dim2 * Dim3, Dim2 * Dim3, Dim3, 1}
-// Defualt strides for column-major: {Dim1, 1, Dim0 * Dim1 * Dim3, Dim0 * Dim1}
+// Default strides for row-major: {Dim1 * Dim2 * Dim3, Dim2 * Dim3, Dim3, 1}
+// Default strides for column-major: {Dim1, 1, Dim0 * Dim1 * Dim3, Dim0 * Dim1}
 
 // M1, 1, M0 * M1 * K1, M0 * M1
 // K0, K1, M0, M1

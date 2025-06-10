@@ -15,7 +15,7 @@
 
 namespace ck_tile {
 
-// use int8_t directly for int8 arithemetic
+// use int8_t directly for int8 arithmetic
 // here one can use ck_tile::int8_t to access original int8_t
 using int8_t = int8_t;
 
@@ -29,7 +29,7 @@ struct numeric<int8_t>
     // minimum finite value, or minimum positive normalized value for float
     CK_TILE_HOST_DEVICE static constexpr int8_t min() { return int8_t(-128); }
 
-    // minumum finite value
+    // minimum finite value
     CK_TILE_HOST_DEVICE static constexpr int8_t lowest() { return int8_t(-128); }
 
     // maximum finite value

@@ -16,7 +16,7 @@ namespace host {
 
 // dinput descriptor in [N, C, Do, Ho, Wo] order
 // doutput descriptor in [N, C, Di, Hi, Wi] order
-// phyiscal layout is irrelavent
+// physical layout is irrelevant
 template <ck::index_t NDimSpatial,
           typename DInDataType,
           typename DOutDataType,

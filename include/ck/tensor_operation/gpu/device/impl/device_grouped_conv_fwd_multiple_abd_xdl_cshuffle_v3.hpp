@@ -159,7 +159,7 @@ __global__ void
         amd_wave_read_first_lane(compute_ptr_offset_of_n.GetEPtrOffset(n_idx));
 
     // Pass two lds pointer is the key to tell compiler that ds_read/write
-    // operate on different lds chunk at same time without order dependecy
+    // operate on different lds chunk at same time without order dependency
     __shared__ char p_shared_0[GridwiseGemm::GetSharedMemoryNumberOfByte()];
     __shared__ char p_shared_1[GridwiseGemm::GetSharedMemoryNumberOfByte()];
 

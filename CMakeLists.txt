@@ -280,7 +280,7 @@ if(NOT WIN32 AND ${hip_VERSION_FLAT} GREATER 600241132)
    add_compile_options("SHELL: -mllvm -amdgpu-function-calls=false")
 endif()
 #
-# Seperate linking jobs from compiling
+# Separate linking jobs from compiling
 # Too many concurrent linking jobs can break the build
 # Copied from LLVM
 set(CK_PARALLEL_LINK_JOBS "" CACHE STRING
@@ -378,15 +378,15 @@ set(CK_HIP_VERSION_MINOR "${HIP_VERSION_MINOR}")
 set(CK_HIP_VERSION_PATCH "${HIP_VERSION_PATCH}")
 if( DEFINED CK_OVERRIDE_HIP_VERSION_MAJOR )
     set(CK_HIP_VERSION_MAJOR "${CK_OVERRIDE_HIP_VERSION_MAJOR}")
-    message(STATUS "CK_HIP_VERSION_MAJOR overriden with ${CK_OVERRIDE_HIP_VERSION_MAJOR}")
+    message(STATUS "CK_HIP_VERSION_MAJOR overridden with ${CK_OVERRIDE_HIP_VERSION_MAJOR}")
 endif()
 if( DEFINED CK_OVERRIDE_HIP_VERSION_MINOR )
     set(CK_HIP_VERSION_MINOR "${CK_OVERRIDE_HIP_VERSION_MINOR}")
-    message(STATUS "CK_HIP_VERSION_MINOR overriden with ${CK_OVERRIDE_HIP_VERSION_MINOR}")
+    message(STATUS "CK_HIP_VERSION_MINOR overridden with ${CK_OVERRIDE_HIP_VERSION_MINOR}")
 endif()
 if( DEFINED CK_OVERRIDE_HIP_VERSION_PATCH )
     set(CK_HIP_VERSION_PATCH "${CK_OVERRIDE_HIP_VERSION_PATCH}")
-    message(STATUS "CK_HIP_VERSION_PATCH overriden with ${CK_OVERRIDE_HIP_VERSION_PATCH}")
+    message(STATUS "CK_HIP_VERSION_PATCH overridden with ${CK_OVERRIDE_HIP_VERSION_PATCH}")
 endif()
 message(STATUS "Build with HIP ${HIP_VERSION}")
 link_libraries(hip::device)

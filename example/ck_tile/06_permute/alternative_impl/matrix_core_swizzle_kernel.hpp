@@ -64,7 +64,7 @@ enum class matrix_core_permute_style
 // this kernel only deal with fp16/bf16 data(16bit), and use 2d block size to do the swizzling
 // for simplicity, only consider n/k is multiple of block-size
 
-// independend host arg with no template
+// independent host arg with no template
 struct matrix_core_swizzle_host_args
 {
     const void* p_src;

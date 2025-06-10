@@ -1569,7 +1569,7 @@ struct indexing : public base_transform<1, 1>
                                                 LowIdx& idx_low,
                                                 const UpIdx& idx_up) const
     {
-        // TODO: nonthing changed here
+        // TODO: nothing changed here
         static_assert(LowIdxDiff::size() == 1 && UpIdxDiff::size() == NDimUp &&
                           LowIdx::size() == 1 && UpIdx::size() == NDimUp,
                       "wrong! inconsistent # of dimension");

@@ -56,7 +56,7 @@ auto create_args(int argc, char* argv[])
             "3328",
             "seqlen_q. if group-mode, means the average value of seqlen_q\n"
             "total_seqlen_q = seqlen_q * batch, and seqlen_q per batch may vary\n"
-            "also with \"-s=s0,s1,s2...\" comma seperated int to set per batch seqlen(group-mode)")
+            "also with \"-s=s0,s1,s2...\" comma separated int to set per batch seqlen(group-mode)")
         .insert("s_k", "-1", "seqlen_k (including new key/value), -1 means equal to s")
         .insert("s_knew",
                 "0",

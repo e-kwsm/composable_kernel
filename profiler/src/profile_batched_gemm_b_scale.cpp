@@ -57,7 +57,7 @@ int profile_batched_gemm_b_scale(int argc, char* argv[])
         printf("arg7: print tensor value (0: no; 1: yes)\n");
         printf("arg8: time kernel (0=no, 1=yes)\n");
         printf("arg9 to 15: M, N, K, StrideA, StrideB, StrideC, BatachCount\n");
-        printf("arg16: split k into mulitiple batch\n");
+        printf("arg16: split k into multiple batch\n");
         printf("optional:\n");
         printf("arg17: number of warm-up cycles (default 1)\n");
         printf("arg18: number of iterations (default 10)\n");

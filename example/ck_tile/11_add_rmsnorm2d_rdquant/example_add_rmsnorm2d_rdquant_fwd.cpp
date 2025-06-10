@@ -187,7 +187,7 @@ bool run(const ck_tile::ArgParser& arg_parser)
         {
             ck_tile::HostTensor<InvRmsDataType> invRms_host_ref({m});
 
-            // CAUSION: kernel use ComputeDataType version of x, but we use XDataType here for
+            // CAUTION: kernel use ComputeDataType version of x, but we use XDataType here for
             // simplicity
             ck_tile::reference_rmsnorm2d_fwd<XDataType,
                                              GammaDataType,
